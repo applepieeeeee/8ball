@@ -230,6 +230,7 @@
             const eightNumber = document.getElementById('eightNumber');
             const askButton = document.getElementById('askButton');
 
+            // the part youve been WAITING FOR
             const responses = [
                 "ooh yes",
                 "go for it",
@@ -245,8 +246,10 @@
                 "like probably but i'm just guessing",
                 "It is decidedly so",
                 "without a doubt",
-                "to be or not to be... that is the question. and the answer, apparently"
+                "to be or not to be... that is the question. and the answer, apparently",
+                "wow that is a hard question"
             ];
+
 
             function getRandomResponse(){
                 const randomIndex = Math.floor(Math.random() * responses.length);
@@ -291,6 +294,7 @@
                 if (!askButton.disabled) {
                     showAnswer();
                 }
+
             });
 
             resetBall();
