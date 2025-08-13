@@ -173,7 +173,7 @@
 
 <body>
     <div class="container">
-        <h1> ur fav magic 8 ball 🎱</h1>
+        <h1> ur fav magic 8 ball</h1>
         <div class="eight-ball" id="eightBall">
             <div class="inner-circle" id="innerCircle">
                 <p class="answer-text" id="answerText"></p>
@@ -237,6 +237,21 @@
 
                 eightBall.classList.add('spin');
 
+                setTimeout(() => {
+                    const randomResponse = getRandomResponse(); 
+                    answerText.textContent = randomResponse;
+                    innerCircle.classList.add('active'); 
+                    eightNumber.style.opacity = '0'; 
+                    
+                    setTimeout(() => {
+                        answerText.classList.add('visible');
+                    }, 50);
+
+                    setTimeout(() => {
+                        askButton.disabled = false;
+                    }, 1000); 
+                }, 750);
+
                 askButton.addEventListener('click', showAnswer);
 
                 eightBall.addEventListener('click', () => {
@@ -244,11 +259,12 @@
                         showAnswer();
                     }
                 });
-
+                
                 resetBall();
             }
+
+
         });
     </script>
 </body>
-
 </html>
