@@ -23,7 +23,7 @@
             align-items: center;
             gap: 30px;
             padding: 20px;
-            background-color: #000;
+            background-color: #133980;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
             max-width: 400px;
@@ -188,7 +188,68 @@
         </div>
     </div>
 
-    
+    <script> 
+        document.addEventListener('DOMContentLoaded', () => {
+            const eightBall = document.getElementById('eightBall');
+            const innerCircle = document.getElementById('innerCircle');
+            const answerText = document.getElementById('answerText');
+            const eightNumber = document.getElementById('eightNumber');
+            const askButton = document.getElementById('askButton');
+
+            const responses = {
+                "ooh yes": "ooh yes",
+                "go for it": "go for it",
+                "sometimes we don't do things! and for a good reason": "sometimes we don't do things! and for a good reason",
+                "NaH BrO": "NaH BrO",
+                "ask again later": "ask again later",
+                "definitely": "definitely",
+                "who thought this was a good idea": "who thought this was a good idea",
+                "that sounds like... a NO from me": "that sounds like... a NO from me",
+                "a definite maybe": "a definite maybe",
+                "well, obviously yes": "well, obviously yes",
+                "idk. look it up on Google": "idk. look it up on Google",
+                "like probably but i'm just guessing": "like probably but i'm just guessing",
+                "It is decidedly so": "It is decidedly so",
+                "without a doubt": "without a doubt",
+                "to be or not to be... that is the question. and the answer, apparently" : "to be or not to be... that is the question. and the answer, apparently"
+            };
+
+            function getRandom(){
+                const index = Math.floor(Math.random() * Object.keys(responses).length);
+                return Object.values(responses)[index];
+            }
+
+            function resetBall(){
+                eightBall.classList.remove('spin');
+                answerText.classList.remove('visible');
+                innerCircle.classList.remove('active');
+
+                answerText.textContent = '';
+                eightNumber.style.opacity = '1';
+                eightNumber.textContent = '8';
+
+                askButton.disabled = false;
+            }
+
+            function showAnswer() {
+                askButton.disabled = true;
+                resetBall();
+
+                eightBall.classList.add('spin');
+
+                askButton.addEventListener('click', showAnswer);
+
+                eightBall.addEventListener('click', () => {
+                    if (!askButton.disabled) {
+                        showAnswer();
+                    }
+                });
+
+                resetBall();
+            }
+
+        });
+    </script>
 </body>
 
 </html>
