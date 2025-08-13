@@ -12,6 +12,7 @@
             align-items: center;
             height: 100vh;
             background-color: #010844;
+
             margin: 0;
             padding: 0;
             color: #ffffff;
@@ -23,10 +24,13 @@
             align-items: center;
             gap: 30px;
             padding: 20px;
+
             background-color: #133980;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
             max-width: 400px;
+
+            width: 90%;
             text-align: center;
         }
         h1 {
@@ -35,7 +39,8 @@
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
-        /* Eight ball styles */
+
+        /* Eight ball config */
         .eight-ball {
             width: 250px;
             height: 250px;
@@ -52,6 +57,10 @@
         .eight-ball:hover {
             transform: scale(1.1);
         }
+
+
+
+
         /* Eight ball spinning effect */
         .eight-ball.spin {
             animation: spin 0.8s ease-in-out forwards;
@@ -72,6 +81,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .answer-text {
             color: #ffffff;
             font-size: 1.2rem;
@@ -96,7 +106,9 @@
             transition: opacity 0.3s ease-out;
             z-index: 1;
         }
-        /* Hide the 8 on the ball when active */
+
+
+        /* Hide 8 on the ball when active */
         .inner-circle.active + .eight-number {
             opacity: 0;
         }
@@ -107,6 +119,7 @@
             justify-content: center;
             align-items: center;
         }
+
         button {
             background-color: #5f84a7;
             color: white;
@@ -117,34 +130,43 @@
             transition: background-color 0.3s ease, transform 0.2s ease;
             width: fit-content;
         }
+
         button:hover {
             background-color: #4a6b8a;
             transform: translateY(-3px);
         }
+
         button:active {
             transform: translateY(0);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
+
         button:disabled {
             background-color: #6b7280;
             cursor: not-allowed;
             transform: none;
             box-shadow: none;
         }
+
         /* GitHub link styles */
         .github-link {
             margin-top: 25px;
             font-size: 0.9rem;
         }
+
         .github-link a {
             color: #8ba9c0;
             transition: color 0.3s ease;
             text-decoration: none;
         }
+
         .github-link a:hover {
             color: #90cdf4;
             text-decoration: underline;
         }
+
+
+
         @media (max-width: 600px) {
             h1 {
                 font-size: 3rem;
@@ -171,21 +193,33 @@
     </style>
 </head>
 
+
+
+
+
 <body>
     <div class="container">
         <h1> ur fav magic 8 ball</h1>
+
+
+
         <div class="eight-ball" id="eightBall">
             <div class="inner-circle" id="innerCircle">
                 <p class="answer-text" id="answerText"></p>
             </div>
             <span class="eight-number" id="eightNumber">8</span>
         </div>
+        
+
+        
         <div class="button-group">
             <button id="askButton">ask the 8 ball...</button>
         </div>
+
         <div class="github-link">
             <a href="https://github.com/applepieeeeee/magic-8-ball" target="_blank" rel="noopener noreferrer">view this on github ! </a>
         </div>
+
     </div>
 
     <script> 
