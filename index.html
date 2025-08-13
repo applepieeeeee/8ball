@@ -8,13 +8,14 @@
         body {
             font-family: 'Roboto Mono', monospace;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             background-color: #010844;
-
             margin: 0;
-            padding: 0;
+            padding: 30px;
+            box-sizing: border-box;
             color: #ffffff;
             overflow: hidden;
         }
@@ -22,46 +23,37 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 30px;
-            padding: 20px;
-
+            gap: 45px;
+            padding: 30px;
             background-color: #133980;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            max-width: 400px;
-
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            max-width: 600px;
             width: 90%;
             text-align: center;
         }
         h1 {
             color: #cbd5e0;
             font-size: 2.5rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
         }
-
-        /* Eight ball config */
         .eight-ball {
-            width: 250px;
-            height: 250px;
+            width: 375px;
+            height: 375px;
             background: linear-gradient(135deg, #000000, #333333);
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
             position: relative;
-            box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8), 0 15px 30px rgba(0, 0, 0, 0.7);
+            box-shadow: inset 0 0 75px rgba(0, 0, 0, 0.8), 0 23px 45px rgba(0, 0, 0, 0.7);
             cursor: pointer;
             transition: transform 0.1s ease-out;
         }
         .eight-ball:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
-
-
-
-
-        /* Eight ball spinning effect */
         .eight-ball.spin {
             animation: spin 0.8s ease-in-out forwards;
         }
@@ -70,28 +62,27 @@
             100% { transform: rotateY(720deg); }
         }
         .inner-circle {
-            width: 150px;
-            height: 150px;
+            width: 225px;
+            height: 225px;
             background-color: #0e4c9e;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: inset 0 0 15px rgba(223, 223, 223, 0.5);
+            box-shadow: inset 0 0 23px rgba(223, 223, 223, 0.5);
             position: relative;
             overflow: hidden;
         }
-
         .answer-text {
             color: #ffffff;
-            font-size: 1.2rem;
+            font-size: 1.05rem;
             text-align: center;
-            padding: 12px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            padding: 23px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
             opacity: 0;
             transform: scale(0.77);
             transition: opacity 0.3s ease-in, transform 0.3s ease-in;
-            line-height: 1.3;
+            line-height: 1.4;
         }
         .answer-text.visible {
             opacity: 1;
@@ -106,121 +97,98 @@
             transition: opacity 0.3s ease-out;
             z-index: 1;
         }
-
-
-        /* Hide 8 on the ball when active */
         .inner-circle.active + .eight-number {
             opacity: 0;
         }
         .button-group {
             display: flex;
-            gap: 15px;
+            flex-direction: column;
+            gap: 30px;
             width: 100%;
             justify-content: center;
             align-items: center;
         }
-
         button {
             background-color: #5f84a7;
             color: white;
-            padding: 12px 25px;
+            padding: 18px 38px;
             border: none;
-            border-radius: 7px;
+            border-radius: 11px;
+            font-size: 1rem;
             cursor: pointer;
+            box-shadow: 0 6px 9px rgba(0, 0, 0, 0.3);
             transition: background-color 0.3s ease, transform 0.2s ease;
             width: fit-content;
         }
-
         button:hover {
             background-color: #4a6b8a;
-            transform: translateY(-3px);
+            transform: translateY(-5px);
         }
-
         button:active {
             transform: translateY(0);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
         }
-
         button:disabled {
             background-color: #6b7280;
             cursor: not-allowed;
             transform: none;
             box-shadow: none;
         }
-
-        /* GitHub link styles */
         .github-link {
-            margin-top: 25px;
+            margin-top: 38px;
             font-size: 0.9rem;
         }
-
         .github-link a {
             color: #8ba9c0;
             transition: color 0.3s ease;
             text-decoration: none;
         }
-
         .github-link a:hover {
             color: #90cdf4;
             text-decoration: underline;
         }
-
-
-
-        @media (max-width: 600px) {
+        @media (max-width: 900px) {
             h1 {
-                font-size: 3rem;
+                font-size: 2rem;
             }
             .eight-ball {
-                width: 200px;
-                height: 200px;
+                width: 300px;
+                height: 300px;
             }
             .inner-circle {
-                width: 120px;
-                height: 120px;
+                width: 180px;
+                height: 180px;
             }
             .answer-text {
-                font-size: 0.3rem;
-                padding:10px;
+                font-size: 0.85rem;
+                padding: 15px;
             }
             .eight-number {
                 font-size: 4rem;
             }
             button {
-                padding: 10px 20px;
+                padding: 15px 30px;
                 font-size: 1rem;
             }
         }
     </style>
 </head>
 
-
-
-
-
 <body>
     <div class="container">
-        <h1> ur fav magic 8 ball</h1>
-
-
-
+        <h1> ur fav magic 8 ball 🎱</h1>
         <div class="eight-ball" id="eightBall">
             <div class="inner-circle" id="innerCircle">
                 <p class="answer-text" id="answerText"></p>
             </div>
             <span class="eight-number" id="eightNumber">8</span>
         </div>
-        
-
-
         <div class="button-group">
             <button id="askButton">ask the 8 ball...</button>
         </div>
-
         <div class="github-link">
             <a href="https://github.com/applepieeeeee/magic-8-ball" target="_blank" rel="noopener noreferrer">view this on github ! </a>
         </div>
-
     </div>
 
     <script> 
@@ -231,7 +199,6 @@
             const eightNumber = document.getElementById('eightNumber');
             const askButton = document.getElementById('askButton');
 
-            // the part youve been WAITING FOR
             const responses = [
                 "ooh yes",
                 "go for it",
@@ -252,8 +219,6 @@
                 "here's some popcorn while i think about it 🍿"
             ];
 
-
-
             function getRandomResponse(){
                 const randomIndex = Math.floor(Math.random() * responses.length);
                 return responses[randomIndex];
@@ -263,12 +228,10 @@
                 eightBall.classList.remove('spin');
                 answerText.classList.remove('visible');
                 innerCircle.classList.remove('active');
-
                 eightNumber.style.opacity = '1';
                 eightNumber.textContent = '8'; 
                 answerText.textContent = ''; 
                 askButton.disabled = false;
-
             }
 
             function showAnswer() {
@@ -299,7 +262,6 @@
                 if (!askButton.disabled) {
                     showAnswer();
                 }
-
             });
 
             resetBall();
