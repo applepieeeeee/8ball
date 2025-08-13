@@ -1,10 +1,12 @@
 <!DOCTYPE html>
+
 <html>
-<head>
-    <meta charset="utf-8">
-    <title>ur fav magic 8 ball</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <style>
+    <head>
+        <meta charset="utf-8">
+        <title>ur fav magic 8 ball</title>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+        <style>
         body {
             font-family: 'Roboto Mono', monospace;
             display: flex;
@@ -13,8 +15,10 @@
             align-items: center;
             min-height: 100vh;
             background-color: #010844;
+
             margin: 0;
-            padding: 45px;
+            padding: 35px;
+
             box-sizing: border-box;
             color: #ffffff;
             overflow: hidden;
@@ -24,20 +28,27 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 45px;
-            padding: 30px;
-            background-color: #133980;
-            border-radius: 15px;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-            max-width: 600px;
+
+            gap: 30px;
+            padding: 20px;
+            background-color: #547a997a;
+
+            border-radius: 70px;
+            box-shadow: 0 0 30px rgba(126, 126, 126, 0.5);
+
+            max-width: 800px;
+            max-height: 700px;
             width: 90%;
+
             text-align: center;
+            position: relative;
         }
 
         h1 {
             color: #cbd5e0;
             font-size: 2.5rem;
-            margin-bottom: 30px;
+
+            margin-bottom: 10px;
             text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
         }
 
@@ -48,6 +59,7 @@
             border-radius: 50%;
             display: flex;
             justify-content: center;
+
             align-items: center;
             position: relative;
             box-shadow: inset 0 0 75px rgba(0, 0, 0, 0.8), 0 23px 45px rgba(0, 0, 0, 0.7);
@@ -67,15 +79,17 @@
         .inner-circle {
             width: 225px;
             height: 225px;
-            background-color: #0e4c9e;
+            background-color: #345683;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
+
             box-shadow: inset 0 0 23px rgba(223, 223, 223, 0.5);
             position: relative;
             overflow: hidden;
         }
+
         .answer-text {
             color: #ffffff;
             font-size: 1.05rem;
@@ -87,10 +101,12 @@
             transition: opacity 0.3s ease-in, transform 0.3s ease-in;
             line-height: 1.4;
         }
+
         .answer-text.visible {
             opacity: 1;
             transform: scale(1);
         }
+
         .eight-number {
             position: absolute;
             color: #f4f7ff;
@@ -100,9 +116,11 @@
             transition: opacity 0.3s ease-out;
             z-index: 1;
         }
+
         .inner-circle.active + .eight-number {
             opacity: 0;
         }
+
         .button-group {
             display: flex;
             flex-direction: column;
@@ -138,7 +156,7 @@
             box-shadow: none;
         }
         .github-link {
-            margin-top: 38px;
+            margin-top: 0px;
             font-size: 0.9rem;
         }
         .github-link a {
@@ -150,7 +168,7 @@
             color: #90cdf4;
             text-decoration: underline;
         }
-        @media (max-width: 900px) {
+        @media (max-width: 200px) {
             h1 {
                 font-size: 2rem;
             }
