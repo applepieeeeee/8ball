@@ -211,7 +211,7 @@
         </div>
         
 
-        
+
         <div class="button-group">
             <button id="askButton">ask the 8 ball...</button>
         </div>
@@ -285,17 +285,17 @@
                         askButton.disabled = false;
                     }, 1000); 
                 }, 750);
-
-                askButton.addEventListener('click', showAnswer);
-
-                eightBall.addEventListener('click', () => {
-                    if (!askButton.disabled) {
-                        showAnswer();
-                    }
-                });
-                
-                resetBall();
             }
+
+            askButton.addEventListener('click', showAnswer);
+
+            eightBall.addEventListener('click', () => {
+                if (!askButton.disabled) {
+                    showAnswer();
+                }
+            });
+                
+            resetBall();
 
 
         });
