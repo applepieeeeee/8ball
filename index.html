@@ -11,7 +11,7 @@
         body {
             font-family: 'Roboto Mono', monospace;
             display: flex;
-            flex-direction:column;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
@@ -233,7 +233,8 @@
         </div>
 
     </div>
-    <script> 
+
+    <script>
 
         document.addEventListener('DOMContentLoaded', () => {
             const eightBall = document.getElementById('eightBall');
@@ -279,7 +280,6 @@
                 return responses[randomIndex];
             }
 
-
             function resetBall(){
                 eightBall.classList.remove('spin');
                 answerText.classList.remove('visible');
@@ -298,7 +298,6 @@
                 void eightBall.offsetWidth;
                 eightBall.classList.add('spin');
 
-
                 setTimeout(() => {
                     const randomResponse = getRandomResponse();
                     answerText.textContent = randomResponse;
@@ -312,9 +311,7 @@
                     setTimeout(() => {
                         askButton.disabled = false;
                     }, 1000);
-                }, 1012);
-
-
+                }, 1000);
             }
 
             askButton.addEventListener('click', showAnswer);
