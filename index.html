@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 
+
 <html>
     <head>
         <meta charset="utf-8">
@@ -48,9 +49,11 @@
         h1 {
             color: #cbd5e0;
             font-size: 2.5rem;
+            margin-top: 0;
+        }
 
-            margin-bottom: 10px;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+        .athena-award {
+            margin-bottom: 0;
         }
 
         .eight-ball {
@@ -77,6 +80,7 @@
             0% { transform: rotateY(0deg); }
             100% { transform: rotateY(720deg); }
         }
+
         .inner-circle {
             width: 225px;
             height: 225px;
@@ -196,11 +200,10 @@
     </style>
 </head>
 
- ☆ made for athena award ☆
-
 <body>
     <div class="container">
-        <h1> ur fav magic 8 ball 🎱</h1>
+        <div class="athena-award">☆ made for athena award ☆</div>
+        <h1> ur fav magic 8 ball</h1>
         <div class="eight-ball" id="eightBall">
             <div class="inner-circle" id="innerCircle">
                 <p class="answer-text" id="answerText"></p>
@@ -211,17 +214,19 @@
             <button id="askButton">ask away! at your own risk</button>
         </div>
         <div class="github-link">
-            <a href="https://github.com/applepieeeeee/magic-8-ball" target="_blank" rel="noopener noreferrer">view this on github ! </a>
+            <a href="https://github.com/applepieeeeee/magic-8-ball" target="_blank" rel="noopener noreferrer">view this repo on github ! </a>
         </div>
     </div>
 
     <script> 
+
         document.addEventListener('DOMContentLoaded', () => {
             const eightBall = document.getElementById('eightBall');
             const innerCircle = document.getElementById('innerCircle');
             const answerText = document.getElementById('answerText');
             const eightNumber = document.getElementById('eightNumber');
             const askButton = document.getElementById('askButton');
+
 
             const responses = [
                 "ooh yes",
@@ -232,13 +237,12 @@
                 "definitely",
                 "who thought this was a good idea",
                 "that sounds like... a NO from me",
-                "a definite maybe",
+                "a definite... maybe",
                 "well, obviously yes",
                 "idk. look it up on Google",
                 "like probably but i'm just guessing",
                 "It is decidedly so",
                 "without a doubt",
-                "to be or not to be... that is the question. and the answer, apparently",
                 "to be or not to be... that is the question. and the answer, apparently",
                 "to be or not to be... that is the question. and the answer, apparently",
                 "to be or not to be... that is the question. and the answer, apparently",
@@ -250,8 +254,10 @@
                 "NO",
                 "good question.",
                 "not again. you should know better by now.",
-                "Absolutely not."
+                "Absolutely not.",
+                "Do your parents know about this?"
             ];
+
 
             function getRandomResponse(){
                 const randomIndex = Math.floor(Math.random() * responses.length);
@@ -270,24 +276,28 @@
 
             function showAnswer() {
                 askButton.disabled = true;
-                resetBall(); 
+                resetBall();
 
+                // Remove and re-add 'spin' class to restart animation
+                eightBall.classList.remove('spin');
+                // Force reflow to ensure animation restarts
+                void eightBall.offsetWidth;
                 eightBall.classList.add('spin');
 
                 setTimeout(() => {
-                    const randomResponse = getRandomResponse(); 
+                    const randomResponse = getRandomResponse();
                     answerText.textContent = randomResponse;
-                    innerCircle.classList.add('active'); 
-                    eightNumber.style.opacity = '0'; 
-                    
+                    innerCircle.classList.add('active');
+                    eightNumber.style.opacity = '0';
+
                     setTimeout(() => {
                         answerText.classList.add('visible');
                     }, 50);
 
                     setTimeout(() => {
                         askButton.disabled = false;
-                    }, 1000); 
-                }, 1000); 
+                    }, 1000);
+                }, 1000);
             }
 
             askButton.addEventListener('click', showAnswer);
@@ -300,8 +310,7 @@
 
             resetBall();
         });
+
     </script>
 </body>
 </html>
-
-last updated: 8.13.2025
