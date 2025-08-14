@@ -215,6 +215,7 @@
 <body>
     <div class="container">
         <div class="athena-award">☆ made for athena award ☆</div>
+
         <h1> ur fav magic 8 ball</h1>
 
         <div class="eight-ball" id="eightBall">
@@ -225,7 +226,7 @@
         </div>
 
         <div class="button-group">
-            <button id="askButton">ask away! at your own risk</button>
+            <button id="askButton">ask away!</button>
         </div>
 
         <div class="github-link">
@@ -271,7 +272,8 @@
                 "good question.",
                 "not again. you should know better by now.",
                 "Absolutely not.",
-                "Do your parents know about this?"
+                "Do your parents know about this?",
+                "yesss"
             ];
 
 
@@ -279,6 +281,7 @@
                 const randomIndex = Math.floor(Math.random() * responses.length);
                 return responses[randomIndex];
             }
+
 
             function resetBall(){
                 eightBall.classList.remove('spin');
@@ -302,6 +305,7 @@
                     const randomResponse = getRandomResponse();
                     answerText.textContent = randomResponse;
                     innerCircle.classList.add('active');
+
                     eightNumber.style.opacity = '0';
 
                     setTimeout(() => {
@@ -327,6 +331,7 @@
         });
 
     </script>
+    
 </body>
 
 </html>
