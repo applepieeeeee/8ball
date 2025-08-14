@@ -11,7 +11,7 @@
         body {
             font-family: 'Roboto Mono', monospace;
             display: flex;
-            flex-direction: column;
+            flex-direction:column;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
@@ -233,7 +233,6 @@
         </div>
 
     </div>
-
     <script> 
 
         document.addEventListener('DOMContentLoaded', () => {
@@ -280,6 +279,7 @@
                 return responses[randomIndex];
             }
 
+
             function resetBall(){
                 eightBall.classList.remove('spin');
                 answerText.classList.remove('visible');
@@ -294,11 +294,10 @@
                 askButton.disabled = true;
                 resetBall();
 
-                // Remove and re-add 'spin' class to restart animation
                 eightBall.classList.remove('spin');
-                // Force reflow to ensure animation restarts
                 void eightBall.offsetWidth;
                 eightBall.classList.add('spin');
+
 
                 setTimeout(() => {
                     const randomResponse = getRandomResponse();
@@ -313,7 +312,9 @@
                     setTimeout(() => {
                         askButton.disabled = false;
                     }, 1000);
-                }, 1000);
+                }, 1012);
+
+
             }
 
             askButton.addEventListener('click', showAnswer);
