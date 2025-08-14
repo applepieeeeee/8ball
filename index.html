@@ -22,6 +22,7 @@
             box-sizing: border-box;
             color: #ffffff;
             overflow: hidden;
+
         }
         
         .container {
@@ -236,8 +237,10 @@
                 "It is decidedly so",
                 "without a doubt",
                 "to be or not to be... that is the question. and the answer, apparently",
-                "wow that is a hard question",
-                "here's some popcorn while i think about it 🍿"
+                "uhh wow that is a hard question. try asking your mom",
+                "here's some popcorn while i think about it 🍿",
+                "i don't know, but i do know that you are awesome",
+                "NO"
             ];
 
             function getRandomResponse(){
@@ -274,7 +277,7 @@
                     setTimeout(() => {
                         askButton.disabled = false;
                     }, 1000); 
-                }, 750); 
+                }, 1000); 
             }
 
             askButton.addEventListener('click', showAnswer);
