@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 
-
 <html>
     <head>
         <meta charset="utf-8">
@@ -8,6 +7,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 
         <style>
+
         body {
             font-family: 'Roboto Mono', monospace;
             display: flex;
@@ -70,12 +70,15 @@
             cursor: pointer;
             transition: transform 0.1s ease-out;
         }
+
         .eight-ball:hover {
             transform: scale(1.05);
         }
+
         .eight-ball.spin {
             animation: spin 0.8s ease-in-out forwards;
         }
+
         @keyframes spin {
             0% { transform: rotateY(0deg); }
             100% { transform: rotateY(720deg); }
@@ -134,6 +137,7 @@
             justify-content: center;
             align-items: center;
         }
+
         button {
             background-color: #5f84a7;
             color: white;
@@ -146,33 +150,40 @@
             transition: background-color 0.3s ease, transform 0.2s ease;
             width: fit-content;
         }
+
         button:hover {
             background-color: #4a6b8a;
             transform: translateY(-5px);
         }
+
         button:active {
             transform: translateY(0);
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
         }
+
         button:disabled {
             background-color: #6b7280;
             cursor: not-allowed;
             transform: none;
             box-shadow: none;
         }
+
         .github-link {
             margin-top: 0px;
             font-size: 0.9rem;
         }
+
         .github-link a {
             color: #8ba9c0;
             transition: color 0.3s ease;
             text-decoration: none;
         }
+
         .github-link a:hover {
             color: #90cdf4;
             text-decoration: underline;
         }
+
         @media (max-width: 200px) {
             h1 {
                 font-size: 2rem;
@@ -197,6 +208,7 @@
                 font-size: 1rem;
             }
         }
+
     </style>
 </head>
 
@@ -204,18 +216,22 @@
     <div class="container">
         <div class="athena-award">☆ made for athena award ☆</div>
         <h1> ur fav magic 8 ball</h1>
+
         <div class="eight-ball" id="eightBall">
             <div class="inner-circle" id="innerCircle">
                 <p class="answer-text" id="answerText"></p>
             </div>
             <span class="eight-number" id="eightNumber">8</span>
         </div>
+
         <div class="button-group">
             <button id="askButton">ask away! at your own risk</button>
         </div>
+
         <div class="github-link">
             <a href="https://github.com/applepieeeeee/magic-8-ball" target="_blank" rel="noopener noreferrer">view this repo on github ! </a>
         </div>
+
     </div>
 
     <script> 
@@ -309,8 +325,10 @@
             });
 
             resetBall();
+
         });
 
     </script>
 </body>
+
 </html>
